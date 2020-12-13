@@ -5,7 +5,6 @@
 //  Created by Panucci, Julian R on 3/17/17.
 //  Copyright © 2017 Panucci, Julian R. All rights reserved.
 //
-
 import Foundation
 import UIKit
 
@@ -40,11 +39,11 @@ public class Snowflake: CAEmitterLayer {
         }
     }
     
-    override public var emitterShape: String {
+    override public var emitterShape: CAEmitterLayerEmitterShape {
         get {
-            return kCAEmitterLayerLine
+            return CAEmitterLayerEmitterShape(rawValue: convertFromCAEmitterLayerEmitterShape(CAEmitterLayerEmitterShape.line))
         }set {
-            self.emitterShape = newValue
+            self.emitterShape = convertToCAEmitterLayerEmitterShape(newValue.rawValue)
         }
     }
     
@@ -182,3 +181,12 @@ public class Snowflake: CAEmitterLayer {
     
 }
 
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromCAEmitterLayerEmitterShape(_ input: CAEmitterLayerEmitterShape) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCAEmitterLayerEmitterShape(_ input: String) -> CAEmitterLayerEmitterShape {
+	return CAEmitterLayerEmitterShape(rawValue: input)
+}

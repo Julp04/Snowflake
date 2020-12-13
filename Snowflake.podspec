@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Snowflake'
-  s.version          = '0.3.0'
+  s.version          = '0.5.0'
   s.summary          = 'Let it snow, let it snow, let it snow ❄️'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ This is a short description of what this pod will do
   s.source           = { :git => 'https://github.com/julp04/Snowflake.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '14.0'
 
   s.source_files = 'Snowflake/Classes/**/*'
   
